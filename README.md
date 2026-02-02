@@ -1,73 +1,215 @@
-# Welcome to your Lovable project
+# Personal Portfolio Website
 
-## Project info
+## 📋 Project Overview
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+This is a **single-page portfolio website** created as a college project for BCA at Kristu Jayanti University, Bengaluru. The project demonstrates frontend development, backend connectivity, and database integration.
 
-## How can I edit this code?
+**Author:** A Hemananda Prasad  
+**Email:** hemanandan21@gmail.com  
+**GitHub:** [github.com/hemanandaprasad](https://github.com/hemanandaprasad)
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🛠️ Technologies Used
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+### Frontend
+- **React** - JavaScript library for building user interfaces
+- **TypeScript** - Type-safe JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **HTML5 & CSS3** - Core web technologies
 
-Changes made via Lovable will be committed automatically to this repo.
+### Backend
+- **Lovable Cloud** - Backend-as-a-Service (uses PostgreSQL database)
+- **REST API** - For contact form submissions
 
-**Use your preferred IDE**
+### Database
+- **PostgreSQL** - Relational database for storing contact submissions
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## 📁 Project Structure
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+```
+portfolio-website/
+├── public/                 # Static assets
+│   ├── favicon.ico
+│   └── robots.txt
+├── src/
+│   ├── components/         # React components
+│   │   ├── Header.tsx      # Navigation bar
+│   │   ├── HeroSection.tsx # Landing section
+│   │   ├── AboutSection.tsx # About me
+│   │   ├── SkillsSection.tsx # Skills display
+│   │   ├── ProjectsSection.tsx # Projects
+│   │   ├── ContactSection.tsx # Contact form
+│   │   └── Footer.tsx      # Footer
+│   ├── integrations/       # Backend integration
+│   │   └── supabase/       # Database client
+│   ├── pages/
+│   │   └── Index.tsx       # Main page
+│   ├── index.css           # Global styles
+│   └── main.tsx            # App entry point
+├── index.html              # HTML template
+├── package.json            # Dependencies
+├── tailwind.config.ts      # Tailwind configuration
+└── README.md               # This file
 ```
 
-**Edit a file directly in GitHub**
+---
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 🚀 How to Run Locally
 
-**Use GitHub Codespaces**
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or bun package manager
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Steps
 
-## What technologies are used for this project?
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/hemanandaprasad/portfolio-website.git
+   cd portfolio-website
+   ```
 
-This project is built with:
+2. **Install dependencies**
+   ```bash
+   npm install
+   # or
+   bun install
+   ```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+3. **Start the development server**
+   ```bash
+   npm run dev
+   # or
+   bun run dev
+   ```
 
-## How can I deploy this project?
+4. **Open in browser**
+   - Navigate to `http://localhost:5173`
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+---
 
-## Can I connect a custom domain to my Lovable project?
+## 📝 Features
 
-Yes, you can!
+1. **Responsive Design** - Works on all screen sizes (mobile, tablet, desktop)
+2. **Smooth Scrolling** - Navigation with smooth scroll animations
+3. **Contact Form** - Working form that saves data to database
+4. **Modern UI** - Clean, professional design with subtle animations
+5. **Accessibility** - Semantic HTML and ARIA labels
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+---
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## 💾 Database Schema
+
+The contact form submissions are stored in a `contact_submissions` table:
+
+| Column     | Type      | Description              |
+|------------|-----------|--------------------------|
+| id         | UUID      | Unique identifier        |
+| name       | TEXT      | Sender's name            |
+| email      | TEXT      | Sender's email           |
+| message    | TEXT      | Message content          |
+| created_at | TIMESTAMP | Date and time submitted  |
+
+---
+
+## 🔧 For Mentor Testing
+
+### How to Test the Website
+
+1. **Navigation**
+   - Click on menu items (Home, About, Skills, Projects, Contact)
+   - Observe smooth scrolling to each section
+
+2. **Responsive Design**
+   - Resize browser window to test mobile layout
+   - Check hamburger menu on mobile view
+
+3. **Contact Form**
+   - Fill in name, email, and message
+   - Click "Send Message"
+   - Observe success message
+
+4. **External Links**
+   - GitHub and LinkedIn links open in new tabs
+   - Email link opens default mail client
+
+---
+
+## 📦 Deployment
+
+This website is hosted on **Lovable** (free hosting).
+
+### Live URL
+The website is accessible at the published URL after deployment.
+
+### How to Deploy Updates
+1. Make changes to the code
+2. Push to GitHub repository
+3. The site updates automatically via CI/CD
+
+---
+
+## 🌐 Custom Domain Setup (Optional)
+
+To connect a custom domain (.com, .org, .in):
+
+1. Purchase a domain from a registrar (GoDaddy, Namecheap, etc.)
+2. In Lovable: Go to Project Settings → Domains
+3. Click "Connect Domain" and enter your domain
+4. Add the DNS records provided:
+   - A Record: Point to the provided IP address
+   - TXT Record: For verification
+5. Wait for DNS propagation (up to 72 hours)
+
+---
+
+## 📌 Sample Git Commit Messages
+
+```
+Initial commit - project setup with React and Tailwind
+
+Added navigation header with mobile menu
+
+Created hero section with gradient background
+
+Implemented about section with profile info
+
+Added skills section with three categories
+
+Built projects section with portfolio card
+
+Implemented contact form with database connection
+
+Added footer with social links
+
+Fixed mobile responsiveness issues
+
+Updated README with project documentation
+```
+
+---
+
+## 🎓 Academic Information
+
+- **Course:** Bachelor of Computer Applications (BCA)
+- **University:** Kristu Jayanti University
+- **Location:** Bengaluru, Karnataka, India
+- **Project Type:** Full-stack Web Development
+
+---
+
+## 📞 Contact
+
+- **Email:** hemanandan21@gmail.com
+- **GitHub:** [github.com/hemanandaprasad](https://github.com/hemanandaprasad)
+- **LinkedIn:** [A Hemananda Prasad](https://www.linkedin.com/in/a-hemananda-prasad-a4b692356/)
+
+---
+
+## 📄 License
+
+This project is created for educational purposes as part of BCA coursework.
+
+© 2025 A Hemananda Prasad. All rights reserved.
